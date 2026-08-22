@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>분실물 찾기 센터</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🔍 분실물 찾기 센터</h1>
+      <p>잃어버린 물건을 등록하고 서로 찾아주세요.</p>
+      <button id="open-modal-btn" class="primary-btn">+ 분실물 등록하기</button>
+    </header>
+
+    <main class="list-section">
+      <h2>등록된 분실물 목록</h2>
+      <div id="item-grid" class="item-grid">
+        <!-- 등록된 카드가 자바스크립트로 생성됩니다 -->
+      </div>
+    </main>
+  </div>
+
+  <!-- 분실물 등록 모달 팝업 -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <h2>분실물 등록</h2>
+      <form id="lost-form">
+        <div class="form-group">
+          <label for="item-name">물건 이름</label>
+          <input type="text" id="item-name" placeholder="예: 파란색 가죽 지갑" required>
+        </div>
+
+        <div class="form-group">
+          <label for="item-desc">상세 설명</label>
+          <textarea id="item-desc" rows="3" placeholder="분실 장소, 시간, 특징 등을 적어주세요." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="item-password">삭제 비밀번호 (4자리 이상)</label>
+          <input type="password" id="item-password" placeholder="삭제 시 사용할 비밀번호 입력" required minlength="4">
+        </div>
+
+        <div class="form-group">
+          <label for="item-image">사진 첨부</label>
+          <input type="file" id="item-image" accept="image/*" required>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" id="close-modal-btn" class="secondary-btn">취소</button>
+          <button type="submit" class="primary-btn">등록</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
